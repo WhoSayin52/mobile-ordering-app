@@ -45,6 +45,30 @@ button {
     background: none;
 }
 
+.default-button {
+    padding: 1.125rem 0;
+
+    border-radius: 3px;
+
+    background-color: var(--teal);
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 0 0 1px var(--black);
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+
 header {
     width: 37.5rem;
     height: 10.625rem;
@@ -57,13 +81,8 @@ header {
     background-position-x: center;
 }
 
-.flex-row {
-    display: flex;
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
+main {
+    padding: 2.875rem;
 }
 
 .header-text-container {
@@ -88,13 +107,11 @@ header {
 }
 
 .item-card {
-    width: 31.75rem;
     height: 8.75rem;
 
-    justify-content: space-between;
-
-    margin: 0 auto;
     margin-top: 2.875rem;
+
+    justify-content: space-between;
 
     border-bottom: 1px solid var(--light-grey);
 }
@@ -128,12 +145,10 @@ header {
 
 .order {
     display: none;
-    width: 31.75rem;
+
     height: 20rem;
 
-    padding-bottom: 3.25rem;
-    margin: 0 auto;
-
+    padding-bottom: 2rem;
 
     gap: 3.5rem;
 }
@@ -165,16 +180,66 @@ header {
     margin-top: 0.75rem;
 }
 
-.complete-order-button {
-    padding: 1.125rem 0;
+.card-details-form-fieldset {
+    display: none;
+    width: 30rem;
+    height: 30rem;
 
-    border-radius: 3px;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 1.5rem;
 
-    background-color: var(--teal);
+    justify-content: space-between;
+
+    gap: 2.875rem;
+
+    border-radius: 4px;
+
+    background-color: var(--white);
+    box-shadow: 0 0 17rem 1rem black;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
+}
+
+.card-details-title {
+    margin-top: 1.5rem;
+
+    font-size: 1.5rem;
     font-weight: 700;
-    color: var(--white);
-    text-shadow: 0 0 1px var(--black);
+    text-align: center;
+}
+
+.card-details-form-input-container {
+    gap: 1.5rem;
+}
+
+.card-details-form-input-field {
+    height: 4.5rem;
+
+    border: 1.3px solid var(--grey);
+    border-radius: 4px;
+
+    font-size: 1.25rem;
+    padding-left: 2rem;
+    color: var(--grey);
+}
+
+.card-details-form-pay-button {
+    padding: 1.5rem 0;
+
+    font-size: 1.5rem;
+}
+
+.thank-you-text {
+    display: none;
+
+    padding: 3.25rem;
+    border-radius: 3px;
+    background-color: var(--light-green);
+
+    font-size: 2rem;
+    color: var(--dark-green);
+    text-shadow: 0 0 0.5px black;
+    text-align: center;
 }

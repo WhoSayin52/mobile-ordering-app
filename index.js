@@ -29,8 +29,6 @@ function render(items = menuArray) {
 	menuSection.innerHTML = items.map((item) => {
 		return createItemHTML(item)
 	}).join('')
-
-
 }
 
 function createItemHTML(item) {
