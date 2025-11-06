@@ -127,7 +127,7 @@ header {
 }
 
 .order {
-    display: flex;
+    display: none;
     width: 31.75rem;
     height: 20rem;
 
