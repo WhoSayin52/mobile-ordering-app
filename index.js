@@ -11,7 +11,7 @@ function createItemHTML(item) {
 				<div class="item-data flex-col">
 					<h2 class="item-name">${name}</h2>
 					<p class="item-ingredients">${ingredients.join(', ')}</p>
-					<h3 class="item-price">${price}</h3>
+					<h3 class="item-price">${price}$</h3>
 				</div>
 			</div>
 			<button class="item-add-button" data-id="${id}">+</button>

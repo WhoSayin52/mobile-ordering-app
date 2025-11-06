@@ -88,7 +88,7 @@ header {
 }
 
 .item-card {
-    width: 31.875rem;
+    width: 31.75rem;
     height: 8.75rem;
 
     justify-content: space-between;
@@ -124,4 +124,57 @@ header {
     font-size: 2rem;
     font-weight: 200;
     color: var(--light-black);
+}
+
+.order {
+    display: flex;
+    width: 31.75rem;
+    height: 20rem;
+
+    padding-bottom: 3.25rem;
+    margin: 0 auto;
+
+
+    gap: 3.5rem;
+}
+
+.order-header {
+    text-align: center;
+}
+
+.selected-items {
+    padding-bottom: 1.5rem;
+
+    border-bottom: 2px solid var(--black);
+}
+
+.selected-item,
+.total {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-item-remove-button {
+    margin-left: 0.8rem;
+    padding-top: 0.3rem;
+
+    color: var(--grey);
+}
+
+.total {
+    margin-top: 0.75rem;
+}
+
+.complete-order-button {
+    padding: 1.125rem 0;
+
+    border-radius: 3px;
+
+    background-color: var(--teal);
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 0 0 1px var(--black);
 }
