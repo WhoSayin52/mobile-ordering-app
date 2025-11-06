@@ -43,25 +43,27 @@
         </section>
     </main>
 
-    <form class="card-details-form flex-col">
-        <fieldset class="card-details-form-fieldset flex-col">
-            <h2 class="card-details-title">Enter card details</h2>
+    <div class="card-details-form-overlay flex-col">
+        <form class="card-details-form">
+            <fieldset class="card-details-form-fieldset flex-col">
+                <h2 class="card-details-title">Enter card details</h2>
 
-            <div class="card-details-form-input-container flex-col">
-                <input class="card-details-form-input-field" name="name" type="text" placeholder="Enter your name"
-                    required pattern="[A-Za-z]+" autocomplete="name">
+                <div class="card-details-form-input-container flex-col">
+                    <input class="card-details-form-input-field" name="name" type="text" placeholder="Enter your name"
+                        required pattern="[A-Za-z]+" autocomplete="name">
 
-                <input class="card-details-form-input-field" name="card-number" type="text"
-                    placeholder="Enter card number" maxlength="19" required \
-                    pattern="^(\d{4}-\d{4}-\d{4}-\d{4}|\d{4} \d{4} \d{4} \d{4}|\d{16})$" autocomplete="cc-number">
+                    <input class="card-details-form-input-field" name="card-number" type="text"
+                        placeholder="Enter card number" maxlength="19" required \
+                        pattern="^(\d{4}-\d{4}-\d{4}-\d{4}|\d{4} \d{4} \d{4} \d{4}|\d{16})$" autocomplete="cc-number">
 
-                <input class="card-details-form-input-field" name="card-cvv" type="text" placeholder="Enter CVV"
-                    required minlength="3" maxlength="3" pattern="\d+" autocomplete="cc-csc">
-            </div>
+                    <input class="card-details-form-input-field" name="card-cvv" type="text" placeholder="Enter CVV"
+                        required minlength="3" maxlength="3" pattern="\d+" autocomplete="cc-csc">
+                </div>
 
-            <button class="card-details-form-pay-button default-button">Pay</button>
-        </fieldset>
-    </form>
+                <button class="card-details-form-pay-button default-button">Pay</button>
+            </fieldset>
+        </form>
+    </div>
 </body>
 
 </html>

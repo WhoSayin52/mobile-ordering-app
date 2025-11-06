@@ -4,6 +4,7 @@ const menuSection = document.querySelector('section.menu');
 const orderSection = document.querySelector('section.order');
 const selectedItems = document.querySelector('section.order .selected-items')
 const totalPrice = document.querySelector('section.order .total .total-price')
+const creditCardPayFormOverlay = document.querySelector('.card-details-form-overlay')
 const creditCardPayForm = document.querySelector('form.card-details-form')
 const thankYouText = document.querySelector('.thank-you-text')
 
@@ -13,7 +14,6 @@ let totalItemCount = 0;
 renderItems(menuArray)
 
 document.addEventListener('click', (event) => {
-	console.log(event)
 	if (event.target.classList.contains('item-add-button')) {
 		addItem(event.target.dataset.id);
 	}
@@ -21,21 +21,25 @@ document.addEventListener('click', (event) => {
 		removeItem(event.target.dataset.id)
 	}
 	else if (event.target.classList.contains('complete-order-button')) {
-		console.log('here')
-		creditCardPayForm.style.display = "block"
+		creditCardPayFormOverlay.style.display = "flex"
+	}
+	else if (event.target == creditCardPayFormOverlay) {
+		creditCardPayFormOverlay.style.display = "none"
 	}
 })
 
 creditCardPayForm.addEventListener('submit', (event) => {
 	event.preventDefault();
 
-	creditCardPayForm.style.display = "none";
+	creditCardPayFormOverlay.style.display = "none";
 	thankYouText.style.display = "block";
 
 	selectedItemsArr.forEach((item) => {
 		item.count = 0;
 	});
 	totalItemCount = 0;
+
+	creditCardPayForm.reset();
 
 	renderOrder()
 })
