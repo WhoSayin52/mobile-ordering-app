@@ -84,7 +84,7 @@ header {
 }
 
 .menu {
-    margin-top: 4.25rem;
+    margin-bottom: 2.875rem;
 }
 
 .item-card {
@@ -94,8 +94,9 @@ header {
     justify-content: space-between;
 
     margin: 0 auto;
+    margin-top: 2.875rem;
 
-    border: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
 }
 
 .item {
