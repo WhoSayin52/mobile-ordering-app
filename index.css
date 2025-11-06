@@ -180,8 +180,11 @@ main {
     margin-top: 0.75rem;
 }
 
-.card-details-form-fieldset {
+.card-details-form {
     display: none;
+}
+
+.card-details-form-fieldset {
     width: 30rem;
     height: 30rem;
 
@@ -222,7 +225,7 @@ main {
 
     font-size: 1.25rem;
     padding-left: 2rem;
-    color: var(--grey);
+    color: var(--black);
 }
 
 .card-details-form-pay-button {

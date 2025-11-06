@@ -4,28 +4,43 @@ const menuSection = document.querySelector('section.menu');
 const orderSection = document.querySelector('section.order');
 const selectedItems = document.querySelector('section.order .selected-items')
 const totalPrice = document.querySelector('section.order .total .total-price')
+const creditCardPayForm = document.querySelector('form.card-details-form')
+const thankYouText = document.querySelector('.thank-you-text')
 
 let selectedItemsArr = getSelectedItemsArr(menuArray);
 let totalItemCount = 0;
 
+renderItems(menuArray)
+
 document.addEventListener('click', (event) => {
 	console.log(event)
-	if (event.target.className === 'item-add-button') {
+	if (event.target.classList.contains('item-add-button')) {
 		addItem(event.target.dataset.id);
 	}
-
-	if (event.target.className === 'selected-item-remove-button') {
+	else if (event.target.classList.contains('selected-item-remove-button')) {
 		removeItem(event.target.dataset.id)
 	}
-
-	if (event.target.className === 'complete-order-button') {
-
+	else if (event.target.classList.contains('complete-order-button')) {
+		console.log('here')
+		creditCardPayForm.style.display = "block"
 	}
 })
 
-render(menuArray)
+creditCardPayForm.addEventListener('submit', (event) => {
+	event.preventDefault();
 
-function render(items = menuArray) {
+	creditCardPayForm.style.display = "none";
+	thankYouText.style.display = "block";
+
+	selectedItemsArr.forEach((item) => {
+		item.count = 0;
+	});
+	totalItemCount = 0;
+
+	renderOrder()
+})
+
+function renderItems(items = menuArray) {
 	menuSection.innerHTML = items.map((item) => {
 		return createItemHTML(item)
 	}).join('')
@@ -67,7 +82,7 @@ function addItem(itemID) {
 	++selectedItemsArr[itemID].count;
 	++totalItemCount;
 
-	processOrderHTML();
+	renderOrder();
 }
 
 function removeItem(itemID) {
@@ -78,10 +93,10 @@ function removeItem(itemID) {
 	--selectedItemsArr[itemID].count;
 	--totalItemCount;
 
-	processOrderHTML();
+	renderOrder();
 }
 
-function processOrderHTML() {
+function renderOrder() {
 	selectedItems.innerHTML = selectedItemsArr.map((item) => {
 		if (item.count > 0) {
 			return createSelectedItemHTML(item)
@@ -93,13 +108,12 @@ function processOrderHTML() {
 	}, 0)}$`
 
 	if (totalItemCount > 0) {
+		thankYouText.style.display = "none";
 		orderSection.style.display = 'flex';
 	}
 	else {
 		orderSection.style.display = 'none'
 	}
-
-	render(menuArray)
 }
 
 function getSelectedItemsArr(menuArr) {

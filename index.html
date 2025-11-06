@@ -56,7 +56,7 @@
             <button class="complete-order-button default-button">Complete order</button>
         </section>
 
-        <section class="thank-you">
+        <section>
             <h2 class="thank-you-text">Thanks! Your order is on its way!</h2>
         </section>
     </main>
@@ -67,11 +67,11 @@
 
             <div class="card-details-form-input-container flex-col">
                 <input class="card-details-form-input-field" name="name" type="text" placeholder="Enter your name"
-                    required pattern="[A-Za-z]" autocomplete="name">
+                    required pattern="[A-Za-z]+" autocomplete="name">
 
                 <input class="card-details-form-input-field" name="card-number" type="text"
-                    placeholder="Enter card number" maxlength="20" required pattern="\d{4} \d{4} \d{4} \d{4}"
-                    autocomplete="cc-number">
+                    placeholder="Enter card number" maxlength="19" required \
+                    pattern="^(\d{4}-\d{4}-\d{4}-\d{4}|\d{4} \d{4} \d{4} \d{4}|\d{16})$" autocomplete="cc-number">
 
                 <input class="card-details-form-input-field" name="card-cvv" type="text" placeholder="Enter CVV"
                     required minlength="3" maxlength="3" pattern="\d+" autocomplete="cc-csc">
