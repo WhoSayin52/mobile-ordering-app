@@ -87,7 +87,7 @@ header {
 
     background-image: url("./img/burger-header-background.jpg");
     background-size: cover;
-    background-position-y: center;
+    background-position-y: -10rem;
     background-position-x: center;
 }
 
